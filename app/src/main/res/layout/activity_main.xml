@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="琵琶湖の面積は滋賀県の面積のどれくらいですか"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/selections" />
+
+    <LinearLayout
+        android:id="@+id/selections"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/question"
+        app:layout_constraintBottom_toTopOf="@id/finalAnswer" >
+        <RadioGroup
+            android:id="@+id/rdi_grp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioButton android:id="@+id/rdi_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2分の1" />
+            <RadioButton android:id="@+id/rdi_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3分の1" />
+            <RadioButton android:id="@+id/rdi_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6分の1" />
+            <RadioButton android:id="@+id/rdi_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10分の1" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finalAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="決定"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selections"
+        app:layout_constraintBottom_toTopOf="@id/result" />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="次へ"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selections"
+        app:layout_constraintBottom_toTopOf="@id/result" />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ここに結果が表示されます"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/finalAnswer"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
