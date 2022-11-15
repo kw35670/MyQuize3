@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
 
         MyAsync myAsync = new MyAsync(this);
         myAsync.execute();
+        //getQuizes();
         getViews();
+        //setQuize();
         setListener();
         numberOfCorrect = 0;
     }
@@ -105,7 +107,20 @@ public class MainActivity extends AppCompatActivity {
         selectionRadioButtons[0].setChecked(true);
         resultText.setText(defaultResultMessage);
     }
-
+/*
+    private void getQuizes() {
+        quizeList.add(new Quize("中国の首都はどこか", new String[]{"台北", "北京", "上海", "西安"}, 2));
+        quizeList.add(new Quize("中国の人口の9割以上を占める民族は何民族か", new String[]{"唐民族", "アイヌ民族", "満州民族", "漢民族"}, 4));
+        quizeList.add(new Quize("中国の華北平原を流れる運河はどれか", new String[]{"ナイル川", "長江", "ガンジス川", "黄河"}, 4));
+        quizeList.add(new Quize("チベットから中国にかけて広がる世界最大の山脈は何山脈か", new String[]{"アンデス山脈", "アルプス山脈", "ヒマラヤ山脈", "ロッキー山脈"}, 3));
+        quizeList.add(new Quize("中国が人口抑制のために行っている政策は何か", new String[]{"一人っ子政策", "5か年計画", "改革開放", "人口改革"}, 1));
+        quizeList.add(new Quize("韓国の首都はどこか", new String[]{"ソウル", "インチョン", "ピョンヤン", "プサン"}, 1));
+        quizeList.add(new Quize("『東南アジア連合』の略称を何というか", new String[]{"OPEC", "WTO", "APEC", "ASEAN"}, 4));
+        quizeList.add(new Quize("世界第2位の人口がある国はどこか", new String[]{"インド", "インドネシア", "中国", "ロシア"}, 1));
+        quizeList.add(new Quize("『アジア太平洋経済協力』の略称を何というか", new String[]{"PKO", "APEC", "OPEC", "OECD"}, 2));
+        quizeList.add(new Quize("安価な労働力を使って単一作物を大量に栽培する大規模農園のことを何というか", new String[]{"プランバレー", "プランテーション", "モノカルチャー", "単一作園"}, 2));
+    }
+*/
     public void setData(List<Quize> quizeList) {
         this.quizeList = quizeList;
         questionText.setText(this.quizeList.get(quizeIndex).getQuestion());
